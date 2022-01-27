@@ -1,22 +1,25 @@
 :root {
+  /* ///////////// COLOR VARIABLES /////////////// */
   /* theme 1 */
   /* Backgrounds */
-  --vddb-main-bckgr: hsl(222, 26%, 31%);
-  --vddb-toggle-keypad-bckgr: hsl(223, 31%, 20%);
-  --vddb-screen-bckgr: hsl(224, 36%, 15%);
+  --main-bckgr: hsl(222, 26%, 31%);
+  --keypad-bckgr: hsl(223, 31%, 20%);
+  --display-bckgr: hsl(224, 36%, 15%);
   /* Keys */
-  --ddb-key-background: hsl(225, 21%, 49%);
-  --ddb-key-shadow: hsl(224, 28%, 35%);
+  --blue-key-background: hsl(225, 21%, 49%);
+  --blue-key-shadow: hsl(224, 28%, 35%);
 
   --red-key-background-toggle: hsl(6, 63%, 50%);
-  --dark-red-key-shadow: hsl(6, 70%, 34%);
+  --red-key-shadow: hsl(6, 70%, 34%);
 
-  --light-grayish-orange-key-background: hsl(30, 25%, 89%);
-  --grayish-orange-key-shadow: hsl(28, 16%, 65%);
+  --light-key-background: hsl(30, 25%, 89%);
+  --light-key-shadow: hsl(28, 16%, 65%);
   /* Text */
-  --vdgb: hsl(221, 14%, 31%);
+  --text-dark: hsl(221, 14%, 31%);
   --white: hsl(0, 0%, 100%);
 }
+
+/* ///////////// GENERAL STYLES /////////////// */
 
 * {
   padding: 0;
@@ -24,72 +27,141 @@
   box-sizing: border-box;
 }
 
-/* ///////////// GENERAL STYLES /////////////// */
 body {
-  background-color: var(--vddb-main-bckgr);
+  background-color: var(--main-bckgr);
   font-family: "Spartan", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 /* ///////////// CONTAINER /////////////// */
 .container {
-  max-width: 400px;
-  margin: 10vh auto 0 auto;
+  /* margin: 10vh auto 0 auto; */
+  margin: 30px;
 }
 
 /* ///////////// HEADER /////////////// */
 .header {
-  font-size: 16px;
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.theme {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+}
+
+.theme > h2 {
+  display: grid;
+  place-items: end normal;
+  font-size: 12px;
+}
+
+.theme-title {
+  display: flex;
+  justify-content: space-around;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.toggle-button-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* justify-content: flex-end; */
+  gap: 10px;
+}
+/* range slider - https://www.w3schools.com/howto/howto_js_rangeslider.asp */
+input {
+  cursor: pointer;
+  appearance: none;
+  height: 25px;
+  width: 70px;
+  padding: 0 6px;
+  border-radius: 30px;
+  background-color: var(--keypad-bckgr);
+}
+
+input::-webkit-slider-thumb {
+  background: var(--red-key-background-toggle);
+  appearance: none;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
 }
 
 /* ///////////// DISPLAY /////////////// */
 .display {
-  background-color: var(--vddb-screen-bckgr);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--display-bckgr);
   border-radius: 10px;
   color: var(--white);
-  text-align: right;
-  height: 70px;
-  padding: 20px 10px;
-  margin: 20px 0px;
-  font-size: 25px;
+  padding: 30px 30px;
+  margin-bottom: 20px;
+  font-size: 32px;
 }
 
 /* ///////////// BUTTONS /////////////// */
 .grid-buttons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: var(--vddb-toggle-keypad-bckgr);
+  background-color: var(--keypad-bckgr);
   border-radius: 10px;
   font-size: 32px;
   gap: 20px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .button {
   border-radius: 5px;
-  padding: 10px;
+  /* border-bottom: 5px solid var(--light-key-shadow); */
+  box-shadow: 0 4px 0 var(--light-key-shadow);
+  padding: 15px 30px;
   text-align: center;
   cursor: pointer;
-  background-color: var(--white);
-  color: var(--vdgb);
-}
-
-#equal {
-  background-color: rgb(85, 85, 255);
-  color: white;
+  background-color: var(--light-key-background);
+  color: var(--text-dark);
 }
 
 .button:hover {
-  background-color: #323330;
-  color: white;
+  background-color: var(--display-bckgr);
+  color: var(--white);
   transition: 0.5s ease-in-out;
+  box-shadow: none;
+}
+
+.color2 {
+  background-color: var(--blue-key-background);
+  /* border-bottom: 5px solid var(--blue-key-shadow); */
+  box-shadow: 0 4px 0 var(--blue-key-shadow);
+  color: var(--white);
+}
+
+.color3 {
+  background-color: var(--red-key-background-toggle);
+  /* border-bottom: 5px solid var(--red-key-shadow); */
+  box-shadow: 0 4px 0 var(--red-key-shadow);
+  color: var(--white);
 }
 
 /* two last buttons */
-.btn1,
-.btn2 {
+.last2btn {
   grid-column: span 2;
 }
 
