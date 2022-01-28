@@ -15,7 +15,75 @@
   --light-key-background: hsl(30, 25%, 89%);
   --light-key-shadow: hsl(28, 16%, 65%);
   /* Text */
+  --header-text: hsl(0, 0%, 100%);
+  --display-text: hsl(0, 0%, 100%);
   --text-dark: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html[data-colormode="theme-1"] {
+  /* theme 1 */
+  /* Backgrounds */
+  --main-bckgr: hsl(222, 26%, 31%);
+  --keypad-bckgr: hsl(223, 31%, 20%);
+  --display-bckgr: hsl(224, 36%, 15%);
+  /* Keys */
+  --blue-key-background: hsl(225, 21%, 49%);
+  --blue-key-shadow: hsl(224, 28%, 35%);
+
+  --red-key-background-toggle: hsl(6, 63%, 50%);
+  --red-key-shadow: hsl(6, 70%, 34%);
+
+  --light-key-background: hsl(30, 25%, 89%);
+  --light-key-shadow: hsl(28, 16%, 65%);
+  /* Text */
+  --header-text: hsl(0, 0%, 100%);
+  --display-text: hsl(0, 0%, 100%);
+  --text-dark: hsl(221, 14%, 31%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html[data-colormode="theme-2"] {
+  /* theme 2 */
+  /* Backgrounds */
+  --main-bckgr: hsl(0, 0%, 90%);
+  --keypad-bckgr: hsl(0, 5%, 81%);
+  --display-bckgr: hsl(0, 0%, 93%);
+  /* Keys */
+  --blue-key-background: hsl(185, 42%, 37%);
+  --blue-key-shadow: hsl(185, 58%, 25%);
+
+  --red-key-background-toggle: hsl(25, 98%, 40%);
+  --red-key-shadow: hsl(25, 99%, 27%);
+
+  --light-key-background: hsl(45, 7%, 89%);
+  --light-key-shadow: hsl(35, 11%, 61%);
+  /* Text */
+  --header-text: hsl(60, 10%, 19%);
+  --display-text: hsl(60, 10%, 19%);
+  --text-dark: hsl(60, 10%, 19%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html[data-colormode="theme-3"] {
+  /* theme 3 */
+  /* Backgrounds */
+  --main-bckgr: hsl(268, 75%, 9%);
+  --keypad-bckgr: hsl(268, 71%, 12%);
+  --display-bckgr: hsl(268, 71%, 12%);
+  /* Keys */
+  --blue-key-background: hsl(281, 89%, 26%);
+  --blue-key-shadow: hsl(285, 91%, 52%);
+
+  --red-key-background-toggle: hsl(176, 100%, 44%);
+  --red-key-shadow: hsl(177, 92%, 70%);
+
+  --light-key-background: hsl(268, 47%, 21%);
+  --light-key-shadow: hsl(290, 70%, 36%);
+  /* Text */
+  --header-text: hsl(52, 100%, 62%);
+  --display-text: hsl(52, 100%, 62%);
+  --text-dark: hsl(198, 20%, 13%);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -44,7 +112,7 @@ body {
 
 /* ///////////// HEADER /////////////// */
 .header {
-  color: var(--white);
+  color: var(--header-text);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -111,10 +179,11 @@ input::-webkit-slider-thumb {
   align-items: center;
   background-color: var(--display-bckgr);
   border-radius: 10px;
-  color: var(--white);
+  color: var(--display-text);
   padding: 30px 30px;
   margin-bottom: 20px;
   font-size: 32px;
+  height: 92px;
 }
 
 /* ///////////// BUTTONS /////////////// */

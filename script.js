@@ -1,5 +1,22 @@
-let display = document.querySelector(".display");
+///////////////////// THEME /////////////////////
+const themeSelectorBtn = document.getElementById("theme-selector-button");
+const app = document.querySelector("html");
 
+themeSelectorBtn.addEventListener("input", () => {
+  let currentValue = themeSelectorBtn.value;
+  if (currentValue == 0) {
+    app.dataset.colormode = "theme-1";
+  } else if (currentValue == 1) {
+    app.dataset.colormode = "theme-2";
+  } else {
+    app.dataset.colormode = "theme-3";
+  }
+});
+
+// document.querySelector("body").classList;
+
+////////////////////// BUTTONS /////////////////////////
+let display = document.querySelector(".display");
 let buttons = Array.from(document.getElementsByClassName("button"));
 // console.log(buttons);
 
